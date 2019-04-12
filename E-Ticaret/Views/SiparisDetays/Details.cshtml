@@ -1,0 +1,66 @@
+﻿@model E_Ticaret.Models.SiparisDetay
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SiparisDetay</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RefSiparisID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RefSiparisID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeslimEdildi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeslimEdildi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sepet.RefKulID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sepet.RefKulID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sipari.RefKulID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sipari.RefKulID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Urunler.UrunAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Urunler.UrunAdi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SiparisDetayID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

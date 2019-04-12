@@ -1,0 +1,56 @@
+﻿@model E_Ticaret.Models.Urunler
+
+@{
+    ViewBag.Title = "Sil";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>Bu ürünü silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Ürünler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Ürün Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAdi)
+        </dd>
+
+        <dt>
+            Açıklama
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAciklamasi)
+        </dd>
+
+        <dt>
+            Fiyat
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunFiyati)
+        </dd>
+
+        <dt>
+            Kategori
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategori.KategoriAdi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Listeye Geri Dön", "Index")
+        </div>
+    }
+</div>

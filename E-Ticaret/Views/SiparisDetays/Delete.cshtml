@@ -1,0 +1,72 @@
+﻿@model E_Ticaret.Models.SiparisDetay
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SiparisDetay</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RefSiparisID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RefSiparisID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeslimEdildi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeslimEdildi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sepet.RefKulID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sepet.RefKulID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sipari.RefKulID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sipari.RefKulID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Urunler.UrunAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Urunler.UrunAdi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

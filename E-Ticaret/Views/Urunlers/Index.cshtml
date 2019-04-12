@@ -1,0 +1,57 @@
+﻿@model IEnumerable<E_Ticaret.Models.Urunler>
+
+@{
+    ViewBag.Title = "Ürünler";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Yeni Ürün Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Ürün Adı
+        </th>
+        <th>
+            Açıklama
+        </th>
+        <th>
+            Resim
+        </th>
+        <th>
+            Fiyat
+        </th>
+        <th>
+            Kategori
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunAciklamasi)
+        </td>
+        <td>
+            <img style="height:60px;width:70px" src="~/images/@(item.UrunID).jpg" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunFiyati)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kategori.KategoriAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.UrunID }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.UrunID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.UrunID })
+        </td>
+    </tr>
+}
+
+</table>

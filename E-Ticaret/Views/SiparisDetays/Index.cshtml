@@ -1,0 +1,59 @@
+﻿@model IEnumerable<E_Ticaret.Models.SiparisDetay>
+
+@{
+    ViewBag.Title = "Sipariş Detay";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Sipariş
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kargo)
+        </th>
+        <th>
+            Teslim Edildi
+        </th>
+        <th>
+            Kullanıcı
+        </th>
+
+        <th>
+            Ürün Adı
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RefSiparisID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kargo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeslimEdildi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sepet.RefKulID)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Urunler.UrunAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.SiparisDetayID }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.SiparisDetayID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.SiparisDetayID })
+        </td>
+    </tr>
+}
+
+</table>
